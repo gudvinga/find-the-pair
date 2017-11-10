@@ -1,0 +1,12 @@
+{
+  "name": "match-match-game",
+  "version": "1.0.0",
+  "description": "Find The Pare game",
+  "author": "Aliaksei Hudzimchyk (gudvinga)",
+  "scripts": { 
+    "start": "node npm_scripts/start.js" 
+  },
+  "devDependencies": {
+    "node-static": "^0.7.10"
+  }
+}

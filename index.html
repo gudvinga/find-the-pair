@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="left">
+            <div class="inner">
+                <form name="controls" method="get">
+                        <p>Select a level</p>
+                        <label>First<input type="radio" name="level" value="first"></label>
+                        <label>Second<input type="radio" name="level" value="second"></label>
+                        <label>Third<input type="radio" name="level" value="third" checked="checked"></label>
+                        <label>Fourth<input type="radio" name="level" value="fourth"></label>
+                        <label>Fifth<input type="radio" name="level" value="fifth"></label>
+                        <p>Select a card shirt</p>
+                        <label>Black<input type="radio" name="card_shirt" value="black"></label>
+                        <label>Brown<input type="radio" name="card_shirt" value="brown" checked="checked"></label>
+                        <label>Blue<input type="radio" name="card_shirt" value="blue"></label>
+                        <p><button id="start" onclick="startGame(); return false;">start</button></p>
+                    </form>
+            </div>
+        </div>
+
+        <div class="right clearfix">
+            <div class="inner">
+                <div id='maingame' class='maingame'></div>
+            </div>
+        </div>
+        
+        <div id='popup' class="popup hidden">
+            <div class="inner">
+                <h2>You Won!</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis, laudantium dicta magnam recusandae nihil assumenda? Consequatur, ex. Illo quibusdam minima soluta veniam aut sunt aspernatur cumque, adipisci, reprehenderit, fugit enim.</p>
+                <button onclick="startGame()">PLAY AGAIN</button>           
+            </div>
+        </div>
+    </body>
+    <script src='js/test.js'></script>
+</html>
