@@ -3,41 +3,61 @@
     <head>
         <title></title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta name="viewport" content="width=device-width"> -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
     </head>
     <body>
-        <div class="left">
-            <div class="inner">
-                <form name="controls" method="get">
-                        <p>Select a level</p>
-                        <label>First<input type="radio" name="level" value="first"></label>
-                        <label>Second<input type="radio" name="level" value="second"></label>
-                        <label>Third<input type="radio" name="level" value="third" checked="checked"></label>
-                        <label>Fourth<input type="radio" name="level" value="fourth"></label>
-                        <label>Fifth<input type="radio" name="level" value="fifth"></label>
-                        <p>Select a card shirt</p>
-                        <label>Black<input type="radio" name="card_shirt" value="black"></label>
-                        <label>Brown<input type="radio" name="card_shirt" value="brown" checked="checked"></label>
-                        <label>Blue<input type="radio" name="card_shirt" value="blue"></label>
-                        <p><button id="start" onclick="startGame(); return false;">start</button></p>
-                    </form>
+        <div class="welcome-screen">
+            <div class="welcome-message">
+                <p>Welcome to the</p>
+                <h1>Match Match Game</h1>
             </div>
+            <section class="description">
+                <h2>Description:</h2>
+                <p>In this game there will be a number of objects on the screen. Two of the objects will be identical, and you need to find out the two as quickly as possible. The faster you find them, the better the memory you have.</p>
+            </section>
+            <section class="instruction">
+                <h2>Instructions:</h2>
+                <p>Choose the level and cards shirt then press start button.<br>
+                Use the mouse to click the identical objects.</p>
+            </section>
+            <section class="controls">
+                <form name="controls" method="get">
+                    <p>Select a level</p>
+                    <label class="button">Very easy<input type="radio" name="level" value="1"></label>
+                    <label class="button">Easy<input type="radio" name="level" value="2"></label>
+                    <label class="button">Medium<input type="radio" name="level" value="3" checked="checked"></label>
+                    <label class="button">Hard<input type="radio" name="level" value="4"></label>
+                    <label class="button">Very hard<input type="radio" name="level" value="5"></label>
+                    <p>Select a card shirt</p>
+                    <label class="card black">Black<input type="radio" name="card_shirt" value="black"></label>
+                    <label class="card brown">Brown<input type="radio" name="card_shirt" value="brown" checked="checked"></label>
+                    <label class="card blue">Blue<input type="radio" name="card_shirt" value="blue"></label>
+                    <p><button id="start" class="start-button">Start Game</button></p>
+                </form>            
+            </section>
         </div>
-
-        <div class="right clearfix">
+        <div class="gameBody display-none">
             <div class="inner">
-                <div id='maingame' class='maingame'></div>
+                <div id="maingame" class="maingame"></div>
+                <div id="timerDiv" class="timer">00:00:00</div>
+                <hr>
+                <button class="start-button" onclick="window.location.reload()">Restart Game</button>
             </div>
         </div>
         
-        <div id='popup' class="popup hidden">
+        <div id="popup" class="popup hidden">
             <div class="inner">
-                <h2>You Won!</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis, laudantium dicta magnam recusandae nihil assumenda? Consequatur, ex. Illo quibusdam minima soluta veniam aut sunt aspernatur cumque, adipisci, reprehenderit, fugit enim.</p>
-                <button onclick="startGame()">PLAY AGAIN</button>           
+                <h2>You WiN!</h2>
+                <p>The way to success is always difficult, but you still manage to get yourself on top and be honored. Congratulations for being so brave in taking challenges in life. <br>You are such a winner. Congratulations on your award! You truly deserve it!</p>
+                <img src="img/winner.gif" alt="You are Winner!">
+                <p>Your time is</p>
+                <div id="winnertime"></div>
+                <button id="startGameFromWin" class="start-button">PLAY AGAIN</button> 
+                <button class="start-button" onclick="window.location.reload()">Restart Game</button>
             </div>
         </div>
     </body>
-    <script src='js/test.js'></script>
+    <script type="module" src='js/match-match-game.js'></script>
 </html>
